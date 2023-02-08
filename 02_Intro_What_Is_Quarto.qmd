@@ -1,7 +1,7 @@
 ---
 title: "My First Quarto Document"
 author: "Aaron Kessler"
-date: "2/7/2023"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
 format:
   html:
     self-contained: true
@@ -42,6 +42,8 @@ In what are called **chunks**. Like this:
 ```{r}
 
 head(txhousing)
+
+
 
 ```
 
@@ -93,6 +95,7 @@ That's fine if we only have one date we want to ever put on there. But let's say
 Or would we?
 
 You can actually put R code directly into the YAML header too, like this:
+It will show the current date 
 
     date: "`r format(Sys.time(), '%B %d, %Y')`"
 

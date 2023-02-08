@@ -48,7 +48,7 @@ It's how you "assign" a stored value in R. How you save something with a name of
 
 You saw above that if we want to see a dataframe/tibble, we can feed R just its name and it gets returned - the whole thing, so to speak.
 
-We can also return just the few rows using `head()`.
+We can also return just the few rows using `head()`. It returns the first 6 rows by default 
 
 ```{r}
 
@@ -69,6 +69,7 @@ glimpse(flightdata)
 There's a lot of flight here. So let's talk about how we can use tidyverse functions to filter and sort our data, just like you may be used to in other tools like Excel, SQL or other methods.
 
 Let's say I only want to see flights that were going to Sarasota, Florida (SRQ).
+Always use the double equals to mean equal 
 
 ```{r}
  
@@ -79,6 +80,7 @@ filter(flightdata, dest == "SRQ")
 Why the double-equal-sign? Let's talk about it.
 
 For numeric values, you can also use boolean operators.
+In this case it means less than or equal to 
 
 ```{r}
 
@@ -310,7 +312,7 @@ stock_data %>%
 
 ```
 
--   How about the five lowest?
+-   How about the five lowest? Asceding is by default. 
 
 ```{r}
 
@@ -343,7 +345,7 @@ stock_data %>%
 ```{r}
 
 stock_data %>% 
-  filter(date == max(date))
+  filter(date == min(date))
 
 ```
 
@@ -375,7 +377,8 @@ gasprices_weekly
 
 ```{r}
 
-
+gasprices_weekly %>%
+  filter(price == max(price))
 
 
 ```
@@ -384,7 +387,8 @@ gasprices_weekly
 
 ```{r}
 
-
+gasprices_weekly %>%
+  filter(price == min(price))
 
 
 ```
@@ -393,7 +397,11 @@ gasprices_weekly
 
 ```{r}
 
+aug_onward <- gasprices_weekly %>%
+  filter(date>="2022-08-01")
 
+aug_onward %>%
+    filter (price==max(price))
 
 
 ```

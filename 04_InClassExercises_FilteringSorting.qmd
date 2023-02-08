@@ -48,8 +48,8 @@ impeach
 
 ```{r}
 
-
-
+impeach %>%
+  filter (for_impeachment=="NO")
 
 
 
@@ -60,8 +60,11 @@ impeach
 ```{r}
 
 
+newthing <- impeach %>%
+  filter (for_impeachment=="NO")
 
-
+newthing %>%
+  filter (p16winningparty=="R")
 
 ```
 
@@ -69,8 +72,14 @@ impeach
 
 ```{r}
 
+newthing <- impeach %>%
+  filter (for_impeachment=="NO")
 
+newthing_ <- newthing %>%
+  filter (p16winningparty=="R")
 
+newthing_ %>%
+  filter (p12winningparty=="R")
 
 
 ```
@@ -80,7 +89,10 @@ impeach
 ```{r}
 
 
+impeach %>%
+  filter (for_impeachment=="YES")
 
+filter(date>="2022-08-01")
 
 
 ```

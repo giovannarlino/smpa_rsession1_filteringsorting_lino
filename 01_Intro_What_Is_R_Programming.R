@@ -19,6 +19,7 @@
 # SOME FUNDAMENTALS OF R ####
 
 #It's a programming language, so think of it to start at its most basic
+# press command and enter together to run it in R 
 
 1+1
 
@@ -40,11 +41,13 @@ c("Billy","Sallie")
 
 #Other languages call them variables, R calls them objects...but they're the same idea
 #Assigning something a name, so that you can use it
+# assigning something a name and then associating it to a value, it will show on the values section
 
 myobject <- 1
 
 #now I can tell R to give me the value of myobject by referring to it by its name
-myobject
+#saved the name as a particular value that I assigned 
+myobject * 10 
 
 #let's try another
 mynames <- c("Billy","Sallie","Tony")
@@ -61,6 +64,8 @@ mynames
 mynames[1]
 
 mynames[3]
+
+mynames [2]
 
 
 # Now by itself, R has certain capabilities built in.
